@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="ProjetoLoja.Tst/ProjetoLoja.Tst.csproj" Id="efb10c5c-26b2-43bd-aed3-5ca4a4758bb5" />
   <Project Path="ProjetoLoja.Web/ProjetoLoja.Web.csproj" Id="72fa1548-c472-41c6-9c24-15bc507c404b" />
   <Project Path="ProjetoLoja/ProjetoLoja.csproj" />
 </Solution>
