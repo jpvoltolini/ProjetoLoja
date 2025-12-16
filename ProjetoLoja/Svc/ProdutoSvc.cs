@@ -18,7 +18,14 @@ public class ProdutoSvc(AppDbContext _dbContext)
 
     public Produto? GetProdutoById(int id)
     {
+        if (id <= 0) throw new Exception("Id inexistente.");
+
         var produto = _dbContext.Produtos.Where(a => a.Id == id).FirstOrDefault();
+        if (produto == null)
+            throw new ArgumentNullException(
+                "Produto não encontrado. Verifique se foi excluido.",
+                $"[ID inserido]: {id}");
+
         return produto;
     }
 
@@ -31,7 +38,7 @@ public class ProdutoSvc(AppDbContext _dbContext)
         return newProduto;
     }
 
-    public Produto UpdateProdutoById(Produto newProduct)
+    public Produto UpdateProduto(Produto newProduct)
     {
         ValidacaoProduto(newProduct);
 
